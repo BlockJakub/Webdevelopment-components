@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Article List Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable article list component for blog posts, learning pages, guides, tutorials, and search-engine-friendly website content.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section section--muted" aria-labelledby="article-list-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Learning Content</p>
+
+          <h1 class="section-heading__title" id="article-list-title">
+            Article list component
+          </h1>
+
+          <p class="section-heading__text">
+            A reusable layout for tutorials, blog posts, learning resources, and search-focused content.
+          </p>
+        </header>
+
+        <div class="article-list">
+          <article class="article-card">
+            <p class="article-card__meta">
+              Web Development · 6 min read
+            </p>
+
+            <h2 class="article-card__title">
+              <a class="article-card__link" href="#" title="Read the semantic HTML guide">
+                Why semantic HTML makes websites stronger
+              </a>
+            </h2>
+
+            <p class="article-card__text">
+              Learn how headings, sections, articles, and landmarks help users, browsers, and search engines understand a page.
+            </p>
+          </article>
+
+          <article class="article-card">
+            <p class="article-card__meta">
+              CSS Architecture · 8 min read
+            </p>
+
+            <h2 class="article-card__title">
+              <a class="article-card__link" href="#" title="Read the reusable CSS component guide">
+                How reusable CSS components improve workflow
+              </a>
+            </h2>
+
+            <p class="article-card__text">
+              A component system saves time, improves consistency, and makes professional websites easier to expand.
+            </p>
+          </article>
+
+          <article class="article-card">
+            <p class="article-card__meta">
+              Performance · 7 min read
+            </p>
+
+            <h2 class="article-card__title">
+              <a class="article-card__link" href="#" title="Read the responsive images guide">
+                Responsive images for faster business websites
+              </a>
+            </h2>
+
+            <p class="article-card__text">
+              Use picture, source, srcset, sizes, width, height, lazy loading, and descriptive alt text correctly.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

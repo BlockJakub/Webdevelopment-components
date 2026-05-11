@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Content Block Image Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable content block with responsive image architecture for professional business websites and search-engine-friendly layouts.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section" aria-labelledby="content-block-image-title">
+      <div class="container">
+        <div class="content-block content-block--image">
+          <div class="content-block__content">
+            <p class="content-block__eyebrow">Responsive Image Layout</p>
+
+            <h1 class="content-block__title" id="content-block-image-title">
+              Content block with image
+            </h1>
+
+            <p class="content-block__text">
+              A reusable section for combining strong written content with an optimised responsive image.
+            </p>
+
+            <div class="content-block__actions">
+              <a class="button button--primary" href="#" title="Learn more about responsive image components">
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <figure class="content-block__media">
+            <picture class="content-block__picture">
+              <source
+                media="(min-width: 80em)"
+                srcset="
+                  ../assets/images/demo/desktop/web-development-workspace-960.webp 960w,
+                  ../assets/images/demo/desktop/web-development-workspace-1280.webp 1280w
+                "
+                sizes="40vw"
+              >
+
+              <source
+                media="(min-width: 48em)"
+                srcset="
+                  ../assets/images/demo/tablet/web-development-workspace-640.webp 640w,
+                  ../assets/images/demo/tablet/web-development-workspace-960.webp 960w
+                "
+                sizes="50vw"
+              >
+
+              <img
+                class="content-block__image"
+                src="../assets/images/demo/mobile/web-development-workspace-640.webp"
+                srcset="
+                  ../assets/images/demo/mobile/web-development-workspace-375.webp 375w,
+                  ../assets/images/demo/mobile/web-development-workspace-480.webp 480w,
+                  ../assets/images/demo/mobile/web-development-workspace-640.webp 640w
+                "
+                sizes="100vw"
+                alt="Professional web development workspace with laptop, code editor, and design tools"
+                title="Responsive content block image component"
+                width="640"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
+
+            <figcaption class="content-block__caption">
+              Optimised image pattern using picture, source, srcset, sizes, width, height, lazy loading, and descriptive alt text.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

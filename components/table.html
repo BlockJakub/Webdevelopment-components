@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Table Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable responsive table component for service comparisons, website packages, technical specifications, and business information.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section section--muted" aria-labelledby="table-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Data Layout</p>
+
+          <h1 class="section-heading__title" id="table-title">
+            Table component
+          </h1>
+
+          <p class="section-heading__text">
+            A reusable responsive table for comparing website packages, features, or technical details.
+          </p>
+        </header>
+
+        <div class="table-wrapper" role="region" aria-labelledby="table-title" tabindex="0">
+          <table class="data-table">
+            <caption class="data-table__caption">
+              Website package comparison
+            </caption>
+
+            <thead class="data-table__head">
+              <tr class="data-table__row">
+                <th class="data-table__heading" scope="col">Feature</th>
+                <th class="data-table__heading" scope="col">Starter</th>
+                <th class="data-table__heading" scope="col">Business</th>
+                <th class="data-table__heading" scope="col">Custom</th>
+              </tr>
+            </thead>
+
+            <tbody class="data-table__body">
+              <tr class="data-table__row">
+                <th class="data-table__cell data-table__cell--label" scope="row">Semantic HTML</th>
+                <td class="data-table__cell">Included</td>
+                <td class="data-table__cell">Included</td>
+                <td class="data-table__cell">Advanced</td>
+              </tr>
+
+              <tr class="data-table__row">
+                <th class="data-table__cell data-table__cell--label" scope="row">Reusable CSS components</th>
+                <td class="data-table__cell">Basic</td>
+                <td class="data-table__cell">Included</td>
+                <td class="data-table__cell">Advanced</td>
+              </tr>
+
+              <tr class="data-table__row">
+                <th class="data-table__cell data-table__cell--label" scope="row">Responsive image system</th>
+                <td class="data-table__cell">Basic</td>
+                <td class="data-table__cell">Included</td>
+                <td class="data-table__cell">Advanced</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

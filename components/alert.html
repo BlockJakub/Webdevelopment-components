@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Alert Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="Reusable alert message components for success, warning, error, and information states on professional websites.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section" aria-labelledby="alert-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Interface Feedback</p>
+
+          <h1 class="section-heading__title" id="alert-title">
+            Alert component
+          </h1>
+
+          <p class="section-heading__text">
+            Reusable message boxes for form feedback, system notices, warnings, and success states.
+          </p>
+        </header>
+
+        <div class="stack">
+          <div class="alert alert--success" role="status">
+            <strong class="alert__title">Success</strong>
+            <p class="alert__text">Your message has been sent successfully.</p>
+          </div>
+
+          <div class="alert alert--info" role="status">
+            <strong class="alert__title">Information</strong>
+            <p class="alert__text">This component can be reused across forms, dashboards, and content pages.</p>
+          </div>
+
+          <div class="alert alert--warning" role="alert">
+            <strong class="alert__title">Warning</strong>
+            <p class="alert__text">Please check the required fields before submitting the form.</p>
+          </div>
+
+          <div class="alert alert--error" role="alert">
+            <strong class="alert__title">Error</strong>
+            <p class="alert__text">Something went wrong. Please try again.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>>

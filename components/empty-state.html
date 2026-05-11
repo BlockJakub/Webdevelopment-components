@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Empty State Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable empty state component for search results, portfolio listings, dashboards, and professional website interfaces.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section section--muted" aria-labelledby="empty-state-title">
+      <div class="container">
+        <div class="empty-state">
+          <div class="empty-state__icon" aria-hidden="true">
+            ○
+          </div>
+
+          <h1 class="empty-state__title" id="empty-state-title">
+            No projects found
+          </h1>
+
+          <p class="empty-state__text">
+            There are currently no portfolio projects matching this category or search filter.
+          </p>
+
+          <div class="empty-state__actions">
+            <a class="button button--primary" href="#" title="View all projects">
+              View All Projects
+            </a>
+
+            <a class="button button--outline" href="#" title="Clear search filters">
+              Clear Filters
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

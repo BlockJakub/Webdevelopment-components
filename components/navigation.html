@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Navigation Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable responsive navigation component for professional HTML and CSS business websites.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-header__nav" aria-label="Primary navigation">
+        <a class="site-header__logo" href="../index.html" title="Go to homepage">
+          Jacuba Components
+        </a>
+
+        <ul class="site-header__list">
+          <li class="site-header__item">
+            <a class="site-header__link site-header__link--active" href="../index.html" aria-current="page">
+              Home
+            </a>
+          </li>
+
+          <li class="site-header__item">
+            <a class="site-header__link" href="buttons.html">
+              Buttons
+            </a>
+          </li>
+
+          <li class="site-header__item">
+            <a class="site-header__link" href="cards.html">
+              Cards
+            </a>
+          </li>
+
+          <li class="site-header__item">
+            <a class="site-header__link" href="navigation.html">
+              Navigation
+            </a>
+          </li>
+        </ul>
+
+        <a class="button button--primary site-header__action" href="#" title="Contact Jacuba Visuals Web">
+          Contact
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" aria-labelledby="navigation-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Component Library</p>
+
+          <h1 class="section-heading__title" id="navigation-title">
+            Navigation component
+          </h1>
+
+          <p class="section-heading__text">
+            A clean reusable navigation bar using semantic HTML, BEM classes, and accessible link structure.
+          </p>
+        </header>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FAQ Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable FAQ component using semantic HTML details and summary elements for accessible business website question sections.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section section--muted" aria-labelledby="faq-title">
+      <div class="container section__inner">
+
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Questions</p>
+
+          <h1 class="section-heading__title" id="faq-title">
+            FAQ component
+          </h1>
+
+          <p class="section-heading__text">
+            A clean question-and-answer pattern for business websites, service pages, and landing pages.
+          </p>
+        </header>
+
+        <div class="faq">
+          <details class="faq__item">
+            <summary class="faq__question">
+              Why use reusable website components?
+            </summary>
+
+            <div class="faq__answer">
+              <p>
+                Reusable components make websites faster to build, easier to maintain, and more consistent across every page.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">
+              Is this structure good for search engine optimisation?
+            </summary>
+
+            <div class="faq__answer">
+              <p>
+                Yes. The component uses semantic HTML, clear headings, readable content, and accessible structure.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">
+              Can this work without JavaScript?
+            </summary>
+
+            <div class="faq__answer">
+              <p>
+                Yes. The details and summary elements work natively in the browser, so the FAQ opens and closes without JavaScript.
+              </p>
+            </div>
+          </details>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</body>
+</html>

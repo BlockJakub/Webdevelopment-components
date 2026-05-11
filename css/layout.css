@@ -1,0 +1,167 @@
+/* =========================================================
+   layout.css
+   Global Layout System
+
+   This file controls reusable page structure.
+
+   Why:
+   - Keeps spacing consistent
+   - Prevents random margins
+   - Gives every page the same professional rhythm
+   - Makes sections, containers, and grids reusable
+========================================================= */
+
+/* ================================
+   CONTAINER
+   Centers content and prevents text from touching screen edges.
+================================ */
+
+.container {
+  width: min(100% - var(--container-padding) * 2, var(--container-max-width));
+  margin-inline: auto;
+}
+
+/* ================================
+   SECTION
+   Reusable vertical spacing for major page blocks.
+================================ */
+
+.section {
+  padding-block: var(--space-20);
+}
+
+.section--muted {
+  background-color: var(--color-surface-muted);
+}
+
+.section--dark {
+  color: var(--color-text-inverse);
+  background-color: var(--color-surface-dark, #0f172a);
+}
+
+/* ================================
+   SECTION INNER
+   Useful when a section needs controlled content spacing.
+================================ */
+
+.section__inner {
+  display: grid;
+  gap: var(--space-12);
+}
+
+/* ================================
+   GRID
+   Reusable responsive grid foundation.
+================================ */
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* ================================
+   AUTO GRID
+   Best for cards when the number of items may change.
+================================ */
+
+.grid--auto {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
+}
+
+/* ================================
+   SPLIT LAYOUT
+   Good for text + image sections.
+================================ */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.split--reverse {
+  direction: rtl;
+}
+
+.split--reverse > * {
+  direction: ltr;
+}
+
+/* ================================
+   STACK
+   Vertical spacing utility for grouped content.
+================================ */
+
+.stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.stack--sm {
+  gap: var(--space-2);
+}
+
+.stack--lg {
+  gap: var(--space-8);
+}
+
+/* ================================
+   CLUSTER
+   Flexible inline layout for buttons, tags, links, and small groups.
+================================ */
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ================================
+   RESPONSIVE LAYOUT RULES
+   Keeps layout usable on tablets and phones.
+================================ */
+
+@media (max-width: 64em) {
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 40em) {
+  .section {
+    padding-block: var(--space-16);
+  }
+
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .cluster {
+    align-items: stretch;
+  }
+
+  .cluster > * {
+    flex: 1 1 auto;
+  }
+}

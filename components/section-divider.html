@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Section Divider Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable section divider component for separating long website sections with clean visual structure.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section" aria-labelledby="first-section-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Before Divider</p>
+
+          <h1 class="section-heading__title" id="first-section-title">
+            First content section
+          </h1>
+
+          <p class="section-heading__text">
+            This section sits above the divider.
+          </p>
+        </header>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section class="section section--muted" aria-labelledby="second-section-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">After Divider</p>
+
+          <h2 class="section-heading__title" id="second-section-title">
+            Second content section
+          </h2>
+
+          <p class="section-heading__text">
+            This section sits below the divider with a clean visual separation.
+          </p>
+        </header>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

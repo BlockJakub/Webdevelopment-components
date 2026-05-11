@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Error State Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable error state component for empty pages, failed searches, 404 pages, and user-friendly website messages.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section section--muted" aria-labelledby="error-state-title">
+      <div class="container">
+        <div class="error-state">
+          <p class="error-state__code">404</p>
+
+          <h1 class="error-state__title" id="error-state-title">
+            Page not found
+          </h1>
+
+          <p class="error-state__text">
+            The page you are looking for may have been moved, renamed, or removed.
+          </p>
+
+          <div class="error-state__actions">
+            <a class="button button--primary" href="../index.html" title="Return to homepage">
+              Back to Home
+            </a>
+
+            <a class="button button--outline" href="search-box.html" title="Search website components">
+              Search Components
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

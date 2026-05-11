@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Progress Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable progress component for project stages, skill levels, dashboards, setup steps, and professional website interfaces.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section section--muted" aria-labelledby="progress-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Interface Feedback</p>
+
+          <h1 class="section-heading__title" id="progress-title">
+            Progress component
+          </h1>
+
+          <p class="section-heading__text">
+            A reusable progress pattern for showing completion, project stages, or setup progress.
+          </p>
+        </header>
+
+        <div class="progress-card">
+          <div class="progress-card__header">
+            <h2 class="progress-card__title">Component system setup</h2>
+            <span class="progress-card__value">75%</span>
+          </div>
+
+          <div
+            class="progress-card__track"
+            role="progressbar"
+            aria-label="Component system setup progress"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="75"
+          >
+            <span class="progress-card__bar" style="width: 75%;"></span>
+          </div>
+
+          <p class="progress-card__text">
+            Core layout, typography, buttons, cards, forms, and interface states are already prepared.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

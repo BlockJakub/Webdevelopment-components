@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Newsletter Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable newsletter signup component for professional websites, learning resources, updates, and business email lists.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section" aria-labelledby="newsletter-title">
+      <div class="container">
+        <form class="newsletter" action="#" method="post">
+          <div class="newsletter__content">
+            <p class="newsletter__eyebrow">Stay Updated</p>
+
+            <h1 class="newsletter__title" id="newsletter-title">
+              Newsletter component
+            </h1>
+
+            <p class="newsletter__text">
+              A reusable signup form for website updates, learning resources, project news, or business content.
+            </p>
+          </div>
+
+          <div class="newsletter__form-group">
+            <label class="newsletter__label" for="newsletter-email">
+              Email address
+            </label>
+
+            <div class="newsletter__control">
+              <input
+                class="newsletter__input"
+                type="email"
+                id="newsletter-email"
+                name="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              >
+
+              <button class="button button--primary newsletter__button" type="submit">
+                Subscribe
+              </button>
+            </div>
+
+            <p class="newsletter__hint">
+              No spam. Only useful updates about web development, design, and website quality.
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

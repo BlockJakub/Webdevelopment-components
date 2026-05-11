@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Loading State Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable loading state component for professional websites, dynamic content, dashboards, and future JavaScript or PHP interfaces.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section" aria-labelledby="loading-state-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Interface State</p>
+
+          <h1 class="section-heading__title" id="loading-state-title">
+            Loading state component
+          </h1>
+
+          <p class="section-heading__text">
+            A reusable loading pattern for dynamic content, dashboards, search results, and future backend features.
+          </p>
+        </header>
+
+        <div class="loading-state" role="status" aria-live="polite">
+          <span class="loading-state__spinner" aria-hidden="true"></span>
+
+          <p class="loading-state__text">
+            Loading content, please wait.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pricing Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="Reusable pricing cards for professional service packages, website offers, and business landing pages.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section" aria-labelledby="pricing-title">
+      <div class="container section__inner">
+
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Service Packages</p>
+
+          <h1 class="section-heading__title" id="pricing-title">
+            Pricing component
+          </h1>
+
+          <p class="section-heading__text">
+            Reusable pricing cards for comparing service levels, features, and project options.
+          </p>
+        </header>
+
+        <div class="grid grid--auto">
+          <article class="pricing-card">
+            <div class="pricing-card__header">
+              <h2 class="pricing-card__title">Starter</h2>
+
+              <p class="pricing-card__price">£299</p>
+
+              <p class="pricing-card__text">
+                A focused landing page for a small business that needs a professional online presence.
+              </p>
+            </div>
+
+            <ul class="pricing-card__list">
+              <li class="pricing-card__item">Semantic HTML structure</li>
+              <li class="pricing-card__item">Responsive CSS layout</li>
+              <li class="pricing-card__item">Basic search engine optimisation</li>
+            </ul>
+
+            <a class="button button--outline" href="#" title="Enquire about the starter website package">
+              Enquire Now
+            </a>
+          </article>
+
+          <article class="pricing-card pricing-card--featured">
+            <div class="pricing-card__badge">Most Popular</div>
+
+            <div class="pricing-card__header">
+              <h2 class="pricing-card__title">Business</h2>
+
+              <p class="pricing-card__price">£599</p>
+
+              <p class="pricing-card__text">
+                A stronger multi-section business website for services, trust signals, and lead generation.
+              </p>
+            </div>
+
+            <ul class="pricing-card__list">
+              <li class="pricing-card__item">Reusable component system</li>
+              <li class="pricing-card__item">Service and portfolio sections</li>
+              <li class="pricing-card__item">Performance-focused image structure</li>
+            </ul>
+
+            <a class="button button--primary" href="#" title="Enquire about the business website package">
+              Start Project
+            </a>
+          </article>
+
+          <article class="pricing-card">
+            <div class="pricing-card__header">
+              <h2 class="pricing-card__title">Custom</h2>
+
+              <p class="pricing-card__price">Quote</p>
+
+              <p class="pricing-card__text">
+                A tailored build for advanced layouts, custom components, and future backend integration.
+              </p>
+            </div>
+
+            <ul class="pricing-card__list">
+              <li class="pricing-card__item">Custom page architecture</li>
+              <li class="pricing-card__item">Advanced responsive image system</li>
+              <li class="pricing-card__item">Scalable structure for future features</li>
+            </ul>
+
+            <a class="button button--secondary" href="#" title="Request a custom website quote">
+              Request Quote
+            </a>
+          </article>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</body>
+</html>

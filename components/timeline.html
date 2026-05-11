@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Timeline Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable timeline component for showing website project phases, business processes, service steps, and case study progress.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section section--muted" aria-labelledby="timeline-title">
+      <div class="container section__inner">
+
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Project Process</p>
+
+          <h1 class="section-heading__title" id="timeline-title">
+            Timeline component
+          </h1>
+
+          <p class="section-heading__text">
+            A reusable process layout for explaining project phases, service steps, or case study progress.
+          </p>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__marker">1</span>
+
+            <div class="timeline__content">
+              <h2 class="timeline__title">Discovery</h2>
+
+              <p class="timeline__text">
+                Understand the business goal, target users, content needs, and website structure before writing code.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <span class="timeline__marker">2</span>
+
+            <div class="timeline__content">
+              <h2 class="timeline__title">Component build</h2>
+
+              <p class="timeline__text">
+                Build reusable HTML and CSS components using BEM classes, design tokens, and responsive layouts.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <span class="timeline__marker">3</span>
+
+            <div class="timeline__content">
+              <h2 class="timeline__title">Testing and polish</h2>
+
+              <p class="timeline__text">
+                Check spacing, accessibility, mobile behaviour, image loading, and search-engine-friendly structure.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Portfolio Grid Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable portfolio grid component for professional case studies, website projects, and business project showcases.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section" aria-labelledby="portfolio-grid-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Project Showcase</p>
+
+          <h1 class="section-heading__title" id="portfolio-grid-title">
+            Portfolio grid component
+          </h1>
+
+          <p class="section-heading__text">
+            A reusable layout for showing website projects, case studies, technology stacks, and business outcomes.
+          </p>
+        </header>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-card">
+            <div class="portfolio-card__body">
+              <span class="tag">PHP · MySQL</span>
+
+              <h2 class="portfolio-card__title">Restaurant Web Application</h2>
+
+              <p class="portfolio-card__text">
+                A full-stack restaurant system with ordering, admin management, staff tools, and structured business logic.
+              </p>
+
+              <a class="button button--primary" href="#" title="View restaurant web application case study">
+                View Case Study
+              </a>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-card__body">
+              <span class="tag">HTML · CSS</span>
+
+              <h2 class="portfolio-card__title">Business Website System</h2>
+
+              <p class="portfolio-card__text">
+                A fast component-based website structure built for local search visibility and professional presentation.
+              </p>
+
+              <a class="button button--outline" href="#" title="View business website project">
+                View Project
+              </a>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-card__body">
+              <span class="tag">Cloud Images</span>
+
+              <h2 class="portfolio-card__title">Real Estate Platform</h2>
+
+              <p class="portfolio-card__text">
+                A property platform structure designed for scalable listings, clear data, and responsive image delivery.
+              </p>
+
+              <a class="button button--secondary" href="#" title="View real estate platform project">
+                Learn More
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

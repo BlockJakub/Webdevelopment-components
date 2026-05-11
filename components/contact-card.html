@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Card Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable contact card component for professional business websites, contact pages, service enquiries, and client communication sections.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section" aria-labelledby="contact-card-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Business Contact</p>
+
+          <h1 class="section-heading__title" id="contact-card-title">
+            Contact card component
+          </h1>
+
+          <p class="section-heading__text">
+            A reusable contact block for showing email, location, availability, and enquiry actions.
+          </p>
+        </header>
+
+        <aside class="contact-card" aria-label="Contact information">
+          <div class="contact-card__content">
+            <p class="contact-card__eyebrow">Get in touch</p>
+
+            <h2 class="contact-card__title">
+              Start a website project enquiry
+            </h2>
+
+            <p class="contact-card__text">
+              Send a message about your website, landing page, portfolio, or reusable component system.
+            </p>
+          </div>
+
+          <ul class="contact-card__list">
+            <li class="contact-card__item">
+              <strong class="contact-card__label">Email</strong>
+
+              <a class="contact-card__link" href="mailto:hello@example.com">
+                hello@example.com
+              </a>
+            </li>
+
+            <li class="contact-card__item">
+              <strong class="contact-card__label">Location</strong>
+
+              <span class="contact-card__value">
+                Leven, Fife, Scotland
+              </span>
+            </li>
+
+            <li class="contact-card__item">
+              <strong class="contact-card__label">Availability</strong>
+
+              <span class="contact-card__value">
+                Open for small business website projects
+              </span>
+            </li>
+          </ul>
+
+          <a class="button button--primary" href="forms.html" title="Open the contact form component">
+            Open Contact Form
+          </a>
+        </aside>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

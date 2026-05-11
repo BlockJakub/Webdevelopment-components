@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Filter Bar Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable filter bar component for portfolio categories, learning resources, blog topics, and service listings.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main id="main-content">
+    <a class="skip-link" href="#main-content">
+  Skip to main content
+</a>
+    <section class="section" aria-labelledby="filter-bar-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Category Navigation</p>
+
+          <h1 class="section-heading__title" id="filter-bar-title">
+            Filter bar component
+          </h1>
+
+          <p class="section-heading__text">
+            A reusable category control for portfolio projects, learning resources, article topics, or service groups.
+          </p>
+        </header>
+
+        <nav class="filter-bar" aria-label="Filter content by category">
+          <a class="filter-bar__link filter-bar__link--active" href="#" aria-current="page">
+            All
+          </a>
+
+          <a class="filter-bar__link" href="#">
+            Websites
+          </a>
+
+          <a class="filter-bar__link" href="#">
+            SEO
+          </a>
+
+          <a class="filter-bar__link" href="#">
+            Images
+          </a>
+
+          <a class="filter-bar__link" href="#">
+            PHP
+          </a>
+        </nav>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

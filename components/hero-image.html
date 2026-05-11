@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hero Image Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable homepage hero component with responsive image architecture for professional business websites.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="hero hero--image" aria-labelledby="hero-image-title">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <p class="hero__eyebrow">Web Development System</p>
+
+            <h1 class="hero__title" id="hero-image-title">
+              Build professional websites with reusable components.
+            </h1>
+
+            <p class="hero__text">
+              A responsive homepage hero pattern with strong copy, clear actions, and optimised image structure.
+            </p>
+
+            <div class="hero__actions">
+              <a class="button button--primary" href="#" title="Start a website project">
+                Start Project
+              </a>
+
+              <a class="button button--outline" href="portfolio-grid.html" title="View portfolio components">
+                View Portfolio
+              </a>
+            </div>
+          </div>
+
+          <figure class="hero__media">
+            <picture class="hero__picture">
+              <source
+                media="(min-width: 80em)"
+                srcset="
+                  ../assets/images/demo/desktop/web-development-workspace-960.webp 960w,
+                  ../assets/images/demo/desktop/web-development-workspace-1280.webp 1280w
+                "
+                sizes="40vw"
+              >
+
+              <source
+                media="(min-width: 48em)"
+                srcset="
+                  ../assets/images/demo/tablet/web-development-workspace-640.webp 640w,
+                  ../assets/images/demo/tablet/web-development-workspace-960.webp 960w
+                "
+                sizes="50vw"
+              >
+
+              <img
+                class="hero__image"
+                src="../assets/images/demo/mobile/web-development-workspace-640.webp"
+                srcset="
+                  ../assets/images/demo/mobile/web-development-workspace-375.webp 375w,
+                  ../assets/images/demo/mobile/web-development-workspace-480.webp 480w,
+                  ../assets/images/demo/mobile/web-development-workspace-640.webp 640w
+                "
+                sizes="100vw"
+                alt="Professional web development workspace with laptop, code editor, and design tools"
+                title="Professional web development hero image"
+                width="640"
+                height="800"
+                loading="eager"
+                decoding="async"
+              >
+            </picture>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

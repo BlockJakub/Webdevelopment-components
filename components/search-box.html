@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Search Box Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable search box component for blogs, portfolios, resources pages, service directories, and professional website filtering interfaces.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main id="main-content">
+    <a class="skip-link" href="#main-content">
+  Skip to main content
+</a>
+    <section class="section section--muted" aria-labelledby="search-box-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Search Pattern</p>
+
+          <h1 class="section-heading__title" id="search-box-title">
+            Search box component
+          </h1>
+
+          <p class="section-heading__text">
+            A reusable search form for resources, blog articles, portfolio projects, or service listings.
+          </p>
+        </header>
+
+        <form class="search-box" action="#" method="get" role="search">
+          <label class="search-box__label" for="site-search">
+            Search resources
+          </label>
+
+          <div class="search-box__control">
+            <input
+              class="search-box__input"
+              type="search"
+              id="site-search"
+              name="search"
+              placeholder="Search components, guides, or projects"
+              autocomplete="off"
+            >
+
+            <button class="button button--primary search-box__button" type="submit">
+              Search
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

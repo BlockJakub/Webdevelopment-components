@@ -1,0 +1,3225 @@
+/* =========================================================
+   components.css
+   Reusable Interface Components
+
+   This file stores visual building blocks.
+
+   Why:
+   - Components can be reused on many pages
+   - BEM keeps class names predictable
+   - Modifier classes create variants without duplicating code
+========================================================= */
+
+
+/* =========================================================
+   BUTTON COMPONENT
+   BEM:
+   .button
+   .button--primary
+   .button--secondary
+   .button--outline
+========================================================= */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+
+  min-height: 4.8rem;
+  padding: var(--space-3) var(--space-6);
+
+  border: 0.1rem solid transparent;
+  border-radius: var(--radius-pill);
+
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+/* 
+   Small lift gives the button a premium interactive feel.
+   Keep it subtle so the interface does not feel childish.
+*/
+
+.button:hover {
+  transform: translateY(-0.2rem);
+}
+
+/* 
+   Primary button.
+   Use this for the most important call to action on a section.
+*/
+
+.button--primary {
+  color: var(--color-text-inverse);
+  background-color: var(--color-brand-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.button--primary:hover {
+  background-color: var(--color-brand-primary-hover);
+  box-shadow: var(--shadow-md);
+}
+
+/* 
+   Secondary button.
+   Use this when the action is important but not the main action.
+*/
+
+.button--secondary {
+  color: var(--color-brand-primary);
+  background-color: var(--color-brand-primary-soft, #dbeafe);
+}
+
+.button--secondary:hover {
+  background-color: var(--color-brand-primary-soft-hover, #bfdbfe);
+}
+
+/* 
+   Outline button.
+   Good for secondary navigation or alternative actions.
+*/
+
+.button--outline {
+  color: var(--color-brand-primary);
+  border-color: var(--color-border-strong);
+  background-color: transparent;
+}
+
+.button--outline:hover {
+  border-color: var(--color-brand-primary);
+  background-color: var(--color-brand-primary-soft, #dbeafe);
+}
+
+/* 
+   Ghost button.
+   Minimal visual weight. Best for small interface actions.
+*/
+
+.button--ghost {
+  color: var(--color-brand-primary);
+  background-color: transparent;
+}
+
+.button--ghost:hover {
+  background-color: var(--color-surface-muted);
+}
+
+
+/* =========================================================
+   SECTION HEADING COMPONENT
+   BEM:
+   .section-heading
+   .section-heading__eyebrow
+   .section-heading__title
+   .section-heading__text
+========================================================= */
+
+.section-heading {
+  max-width: 72rem;
+}
+
+.section-heading--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* 
+   Eyebrow text creates a small category label above the title.
+   Useful for scanning and for strong visual hierarchy.
+*/
+
+.section-heading__eyebrow {
+  margin-bottom: var(--space-2);
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--color-brand-primary);
+}
+
+/* 
+   Main section title.
+   This should normally be an h2 inside a page section.
+*/
+
+.section-heading__title {
+  margin-bottom: var(--space-4);
+
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+
+  color: var(--color-text-primary);
+}
+
+/* 
+   Supporting paragraph under the title.
+   Keep this short and clear for good user experience.
+*/
+
+.section-heading__text {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   CARD COMPONENT
+   BEM:
+   .card
+   .card__media
+   .card__image
+   .card__body
+   .card__title
+   .card__text
+========================================================= */
+
+.card {
+  overflow: hidden;
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+/* 
+   Card hover gives feedback that the card is an interactive surface.
+   Use only when the card contains a link or action.
+*/
+
+.card:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: var(--shadow-md);
+}
+
+/* 
+   Media wrapper keeps image sizing consistent.
+*/
+
+.card__media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--color-surface-muted);
+}
+
+/* 
+   Image fills the card media area without stretching.
+*/
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 
+   Body controls internal card spacing.
+*/
+
+.card__body {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.card__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+}
+
+.card__text {
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   TAG COMPONENT
+   BEM:
+   .tag
+   .tag--accent
+========================================================= */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+  padding: var(--space-1) var(--space-3);
+
+  border-radius: var(--radius-pill);
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+
+  color: var(--color-brand-primary);
+  background-color: var(--color-brand-primary-soft, #dbeafe);
+}
+
+.tag--accent {
+  color: var(--color-text-inverse);
+  background-color: var(--color-brand-accent);
+}
+
+
+
+/* =========================================================
+   SITE HEADER COMPONENT
+   BEM:
+   .site-header
+   .site-header__nav
+   .site-header__logo
+   .site-header__list
+   .site-header__item
+   .site-header__link
+   .site-header__link--active
+   .site-header__action
+========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  border-bottom: 0.1rem solid var(--color-border-subtle);
+
+  background-color: var(--color-surface-page);
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+
+  min-height: 7.2rem;
+}
+
+.site-header__logo {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.site-header__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+
+  list-style: none;
+}
+
+.site-header__link {
+  position: relative;
+
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.site-header__link:hover,
+.site-header__link--active {
+  color: var(--color-brand-primary);
+}
+
+.site-header__link--active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -0.8rem;
+
+  width: 100%;
+  height: 0.2rem;
+
+  border-radius: var(--radius-pill);
+  background-color: var(--color-brand-primary);
+}
+
+.site-header__action {
+  flex-shrink: 0;
+}
+
+@media (max-width: 48em) {
+  .site-header__nav {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding-block: var(--space-4);
+  }
+
+  .site-header__list {
+    order: 3;
+
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .site-header__action {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   HERO COMPONENT
+   BEM:
+   .hero
+   .hero__inner
+   .hero__content
+   .hero__eyebrow
+   .hero__title
+   .hero__text
+   .hero__actions
+   .hero__visual
+   .hero__panel
+   .hero__panel-dot
+   .hero__panel-line
+========================================================= */
+
+.hero {
+  padding-block: var(--space-20);
+  color: var(--color-text-primary);
+  background:
+    radial-gradient(circle at top right, var(--color-brand-primary-soft), transparent 32rem),
+    var(--color-surface-page);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(28rem, 0.9fr);
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.hero__content {
+  max-width: 68rem;
+}
+
+.hero__eyebrow {
+  margin-bottom: var(--space-3);
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--color-brand-primary);
+}
+
+.hero__title {
+  margin-bottom: var(--space-4);
+
+  font-size: clamp(3.6rem, 6vw, 6.4rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.05;
+
+  color: var(--color-text-primary);
+}
+
+.hero__text {
+  max-width: 58rem;
+  margin-bottom: var(--space-8);
+
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.hero__visual {
+  display: grid;
+  place-items: center;
+}
+
+.hero__panel {
+  width: min(100%, 42rem);
+  min-height: 30rem;
+  padding: var(--space-6);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero__panel-dot {
+  display: inline-block;
+
+  width: 1rem;
+  height: 1rem;
+  margin-right: var(--space-1);
+
+  border-radius: 50%;
+  background-color: var(--color-brand-primary);
+}
+
+.hero__panel-line {
+  height: 1.2rem;
+  margin-top: var(--space-4);
+
+  border-radius: var(--radius-pill);
+  background-color: var(--color-border-subtle);
+}
+
+.hero__panel-line--wide {
+  width: 90%;
+}
+
+.hero__panel-line--short {
+  width: 55%;
+}
+
+@media (max-width: 48em) {
+  .hero {
+    padding-block: var(--space-16);
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__actions {
+    align-items: stretch;
+  }
+
+  .hero__actions .button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   SITE FOOTER COMPONENT
+   BEM:
+   .site-footer
+   .site-footer__inner
+   .site-footer__brand
+   .site-footer__logo
+   .site-footer__text
+   .site-footer__nav
+   .site-footer__heading
+   .site-footer__list
+   .site-footer__item
+   .site-footer__link
+   .site-footer__contact
+   .site-footer__address
+   .site-footer__bottom
+   .site-footer__copyright
+========================================================= */
+
+.site-footer {
+  padding-block: var(--space-16) var(--space-6);
+
+  color: var(--color-text-inverse);
+  background-color: var(--color-surface-dark);
+}
+
+.site-footer__inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: var(--space-8);
+}
+
+.site-footer__brand {
+  max-width: 42rem;
+}
+
+.site-footer__logo {
+  display: inline-flex;
+  margin-bottom: var(--space-4);
+
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+  text-decoration: none;
+}
+
+.site-footer__text {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.site-footer__heading {
+  margin-bottom: var(--space-3);
+
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+}
+
+.site-footer__list {
+  display: grid;
+  gap: var(--space-2);
+
+  list-style: none;
+}
+
+.site-footer__link {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+
+  transition: color var(--transition-base);
+}
+
+.site-footer__link:hover {
+  color: var(--color-text-inverse);
+}
+
+.site-footer__address {
+  display: grid;
+  gap: var(--space-2);
+
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.site-footer__bottom {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.14);
+}
+
+.site-footer__copyright {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 48em) {
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* =========================================================
+   FORM COMPONENT
+   BEM:
+   .form-layout
+   .form
+   .form__group
+   .form__label
+   .form__control
+   .form__control--textarea
+   .form__hint
+   .form__error
+========================================================= */
+
+.form-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: var(--space-12);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-5, 2rem);
+
+  padding: var(--space-8);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.form__group {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.form__control {
+  width: 100%;
+  min-height: 4.8rem;
+  padding: var(--space-3) var(--space-4);
+
+  border: 0.1rem solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-page);
+
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.form__control::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.form__control:focus {
+  border-color: var(--color-brand-primary);
+  outline: none;
+  box-shadow: 0 0 0 0.3rem var(--color-brand-primary-soft);
+}
+
+.form__control--textarea {
+  min-height: 14rem;
+  resize: vertical;
+}
+
+.form__hint {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.form__error {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-danger, #dc2626);
+}
+
+@media (max-width: 48em) {
+  .form-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .form {
+    padding: var(--space-6);
+  }
+}
+
+
+/* =========================================================
+   MEDIA CARD COMPONENT
+   BEM:
+   .media-card
+   .media-card__picture
+   .media-card__image
+   .media-card__caption
+
+   Why:
+   - Keeps images responsive
+   - Prevents layout shift with width and height
+   - Supports SEO with proper alt text
+   - Allows different crops for mobile, tablet, and desktop
+========================================================= */
+
+.media-card {
+  overflow: hidden;
+
+  margin: 0;
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.media-card__picture {
+  display: block;
+  background-color: var(--color-surface-muted);
+}
+
+.media-card__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.media-card__caption {
+  padding: var(--space-4) var(--space-6);
+
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface-card);
+}
+
+
+/* =========================================================
+   CALL TO ACTION COMPONENT
+   BEM:
+   .
+   .cta__content
+   .cta__eyebrow
+   .cta__title
+   .cta__text
+   .cta__actions
+
+   Why:
+   - Turns a normal section into a conversion point
+   - Gives users a clear next step
+   - Reusable for contact, booking, enquiry, and service pages
+========================================================= */
+
+.cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-8);
+
+  padding: var(--space-10, 4rem);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background:
+    radial-gradient(circle at top right, var(--color-brand-primary-soft), transparent 28rem),
+    var(--color-surface-card);
+
+  box-shadow: var(--shadow-md);
+}
+
+.cta__content {
+  max-width: 68rem;
+}
+
+.cta__eyebrow {
+  margin-bottom: var(--space-2);
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--color-brand-primary);
+}
+
+.cta__title {
+  margin-bottom: var(--space-3);
+
+  font-size: clamp(var(--text-xl), 4vw, var(--text-2xl));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+
+  color: var(--color-text-primary);
+}
+
+.cta__text {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+.cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+@media (max-width: 48em) {
+  .cta {
+    grid-template-columns: 1fr;
+    padding: var(--space-6);
+  }
+
+  .cta__actions {
+    justify-content: stretch;
+  }
+
+  .cta__actions .button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   CTA BAND COMPONENT
+   BEM:
+   .cta-band
+   .cta-band__content
+   .cta-band__title
+   .cta-band__text
+
+   Why:
+   - Smaller than the full .cta component
+   - Useful between long page sections
+   - Gives users a clear next step without taking over the page
+========================================================= */
+
+.cta-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+
+  padding: var(--space-6);
+
+  border-radius: var(--radius-lg);
+
+  color: var(--color-text-inverse);
+  background-color: var(--color-surface-dark);
+}
+
+.cta-band__content {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.cta-band__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+}
+
+.cta-band__text {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 48em) {
+  .cta-band {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-band .button {
+    width: 100%;
+  }
+}
+
+
+
+/* =========================================================
+   TESTIMONIAL COMPONENT
+   BEM:
+   .testimonial
+   .testimonial__quote
+   .testimonial__footer
+   .testimonial__avatar
+   .testimonial__author
+   .testimonial__name
+   .testimonial__role
+
+   Why:
+   - Builds trust with social proof
+   - Gives service pages more credibility
+   - Works well for reviews, client feedback, and portfolio proof
+========================================================= */
+
+.testimonial {
+  display: grid;
+  align-content: space-between;
+  gap: var(--space-6);
+
+  padding: var(--space-6);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.testimonial__quote {
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+}
+
+.testimonial__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.testimonial__avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+
+  width: 4.8rem;
+  height: 4.8rem;
+
+  border-radius: 50%;
+
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+  background-color: var(--color-brand-primary);
+}
+
+.testimonial__author {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.testimonial__name {
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+}
+
+.testimonial__role {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+
+
+/* =========================================================
+   PRICING CARD COMPONENT
+   BEM:
+   .pricing-card
+   .pricing-card--featured
+   .pricing-card__badge
+   .pricing-card__header
+   .pricing-card__title
+   .pricing-card__price
+   .pricing-card__text
+   .pricing-card__list
+   .pricing-card__item
+
+   Why:
+   - Helps users compare service packages
+   - Makes pricing easier to scan
+   - Creates clear conversion paths for enquiries
+========================================================= */
+
+.pricing-card {
+  position: relative;
+
+  display: grid;
+  gap: var(--space-6);
+  align-content: start;
+
+  padding: var(--space-6);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.pricing-card--featured {
+  border-color: var(--color-brand-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.pricing-card__badge {
+  width: fit-content;
+  padding: var(--space-1) var(--space-3);
+
+  border-radius: var(--radius-pill);
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+
+  color: var(--color-text-inverse);
+  background-color: var(--color-brand-primary);
+}
+
+.pricing-card__header {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.pricing-card__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.pricing-card__price {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+}
+
+.pricing-card__text {
+  color: var(--color-text-secondary);
+}
+
+.pricing-card__list {
+  display: grid;
+  gap: var(--space-2);
+
+  list-style: none;
+}
+
+.pricing-card__item {
+  position: relative;
+  padding-left: var(--space-6);
+
+  color: var(--color-text-secondary);
+}
+
+.pricing-card__item::before {
+  content: "✓";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand-primary);
+}
+
+
+
+/* =========================================================
+   FAQ COMPONENT
+   BEM:
+   .faq
+   .faq__item
+   .faq__question
+   .faq__answer
+
+   Why:
+   - Uses native HTML disclosure behaviour
+   - Works without JavaScript
+   - Improves accessibility and content structure
+   - Useful for service pages and search-focused content
+========================================================= */
+
+.faq {
+  display: grid;
+  gap: var(--space-4);
+
+  max-width: 86rem;
+  margin-inline: auto;
+}
+
+.faq__item {
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq__question {
+  padding: var(--space-5) var(--space-6);
+
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+
+  cursor: pointer;
+}
+
+.faq__question::marker {
+  color: var(--color-brand-primary);
+}
+
+.faq__answer {
+  padding: 0 var(--space-6) var(--space-5);
+
+  color: var(--color-text-secondary);
+}
+
+
+
+
+/* =========================================================
+   BREADCRUMB COMPONENT
+   BEM:
+   .breadcrumb
+   .breadcrumb__list
+   .breadcrumb__item
+   .breadcrumb__link
+   .breadcrumb__current
+
+   Why:
+   - Helps users understand page hierarchy
+   - Improves navigation on larger websites
+   - Supports search-engine-friendly internal structure
+========================================================= */
+
+.breadcrumb {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+
+  list-style: none;
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.breadcrumb__item:not(:last-child)::after {
+  content: "/";
+
+  color: var(--color-border-strong);
+}
+
+.breadcrumb__link {
+  color: var(--color-brand-primary);
+  text-decoration: none;
+}
+
+.breadcrumb__link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb__current {
+  color: var(--color-text-secondary);
+}
+
+
+
+/* =========================================================
+   ALERT COMPONENT
+   BEM:
+   .alert
+   .alert--success
+   .alert--info
+   .alert--warning
+   .alert--error
+   .alert__title
+   .alert__text
+
+   Why:
+   - Gives users clear feedback
+   - Works for forms, dashboards, and system messages
+   - Uses role="status" or role="alert" in HTML for accessibility
+========================================================= */
+
+.alert {
+  display: grid;
+  gap: var(--space-1);
+
+  padding: var(--space-4) var(--space-5);
+
+  border: 0.1rem solid transparent;
+  border-radius: var(--radius-md);
+
+  background-color: var(--color-surface-card);
+}
+
+.alert__title {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+}
+
+.alert__text {
+  color: var(--color-text-secondary);
+}
+
+.alert--success {
+  border-color: var(--color-success, #16a34a);
+  background-color: var(--color-success-soft, #dcfce7);
+}
+
+.alert--info {
+  border-color: var(--color-info, #2563eb);
+  background-color: var(--color-info-soft, #dbeafe);
+}
+
+.alert--warning {
+  border-color: var(--color-warning, #f59e0b);
+  background-color: var(--color-warning-soft, #fef3c7);
+}
+
+.alert--error {
+  border-color: var(--color-danger);
+  background-color: var(--color-danger-soft, #fee2e2);
+}
+
+
+
+/* =========================================================
+   STATS COMPONENT
+   BEM:
+   .stats
+   .stats__item
+   .stats__number
+   .stats__label
+
+   Why:
+   - Shows proof quickly
+   - Makes business value easier to scan
+   - Works well for landing pages, case studies, and service pages
+========================================================= */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.stats__item {
+  padding: var(--space-6);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  text-align: center;
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.stats__number {
+  display: block;
+  margin-bottom: var(--space-2);
+
+  font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+
+  color: var(--color-brand-primary);
+}
+
+.stats__label {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 64em) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 40em) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* =========================================================
+   FEATURE LIST COMPONENT
+   BEM:
+   .feature-list
+   .feature-list__item
+   .feature-list__icon
+   .feature-list__content
+   .feature-list__title
+   .feature-list__text
+
+   Why:
+   - Presents benefits clearly
+   - Works for service pages, landing pages, and portfolio details
+   - Keeps icon + text alignment reusable and predictable
+========================================================= */
+
+.feature-list {
+  display: grid;
+  gap: var(--space-4);
+
+  max-width: 92rem;
+  margin-inline: auto;
+}
+
+.feature-list__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-4);
+
+  padding: var(--space-6);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-list__icon {
+  display: grid;
+  place-items: center;
+
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 50%;
+
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+  background-color: var(--color-brand-primary);
+}
+
+.feature-list__content {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.feature-list__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.feature-list__text {
+  color: var(--color-text-secondary);
+}
+
+
+
+/* =========================================================
+   TIMELINE COMPONENT
+   BEM:
+   .timeline
+   .timeline__item
+   .timeline__marker
+   .timeline__content
+   .timeline__title
+   .timeline__text
+
+   Why:
+   - Explains process clearly
+   - Works for project phases, service steps, and case studies
+   - Uses an ordered list because sequence matters
+========================================================= */
+
+.timeline {
+  display: grid;
+  gap: var(--space-6);
+
+  max-width: 86rem;
+  margin-inline: auto;
+
+  list-style: none;
+}
+
+.timeline__item {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+.timeline__item:not(:last-child)::before {
+  content: "";
+
+  position: absolute;
+  left: 2rem;
+  top: 4.8rem;
+  bottom: calc(var(--space-6) * -1);
+
+  width: 0.2rem;
+
+  background-color: var(--color-border-strong);
+}
+
+.timeline__marker {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  place-items: center;
+
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 50%;
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+
+  color: var(--color-text-inverse);
+  background-color: var(--color-brand-primary);
+}
+
+.timeline__content {
+  padding: var(--space-5);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.timeline__title {
+  margin-bottom: var(--space-2);
+
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.timeline__text {
+  color: var(--color-text-secondary);
+}
+
+
+
+/* =========================================================
+   LOGO CLOUD COMPONENT
+   BEM:
+   .logo-cloud
+   .logo-cloud__item
+
+   Why:
+   - Shows tools, technologies, clients, or partners
+   - Builds trust without needing a full card layout
+   - Uses a list because the logos/items belong to one group
+========================================================= */
+
+.logo-cloud {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-4);
+
+  list-style: none;
+}
+
+.logo-cloud__item {
+  display: grid;
+  place-items: center;
+
+  min-height: 8rem;
+  padding: var(--space-4);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+
+
+/* =========================================================
+   PAGE HERO COMPONENT
+   BEM:
+   .page-hero
+   .page-hero__inner
+   .page-hero__content
+   .page-hero__eyebrow
+   .page-hero__title
+   .page-hero__text
+
+   Why:
+   - Gives internal pages a consistent opening section
+   - Keeps homepage hero separate from smaller page hero sections
+   - Supports breadcrumbs for clear page hierarchy
+========================================================= */
+
+.page-hero {
+  padding-block: var(--space-16);
+
+  background:
+    radial-gradient(circle at top right, var(--color-brand-primary-soft), transparent 28rem),
+    var(--color-surface-muted);
+}
+
+.page-hero__inner {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.page-hero__content {
+  max-width: 78rem;
+}
+
+.page-hero__eyebrow {
+  margin-bottom: var(--space-3);
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--color-brand-primary);
+}
+
+.page-hero__title {
+  margin-bottom: var(--space-4);
+
+  font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+
+  color: var(--color-text-primary);
+}
+
+.page-hero__text {
+  max-width: 64rem;
+
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+
+
+
+
+
+
+/* =========================================================
+   PROCESS COMPONENT
+   BEM:
+   .process
+   .process__item
+   .process__number
+   .process__title
+   .process__text
+========================================================= */
+
+.process {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.process__item {
+  padding: var(--space-6);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.process__number {
+  display: inline-flex;
+  margin-bottom: var(--space-4);
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand-primary);
+}
+
+.process__title {
+  margin-bottom: var(--space-2);
+
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.process__text {
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 64em) {
+  .process {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* =========================================================
+   SERVICE GRID COMPONENT
+   BEM:
+   .service-grid
+   .service-card
+   .service-card__icon
+   .service-card__title
+   .service-card__text
+   .service-card__link
+
+   Why:
+   - Shows service offers clearly
+   - Works well for business and agency websites
+   - Keeps service cards separate from generic .card
+========================================================= */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.service-card {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+
+  padding: var(--space-6);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.service-card:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: var(--shadow-md);
+}
+
+.service-card__icon {
+  display: grid;
+  place-items: center;
+
+  width: 4.8rem;
+  height: 4.8rem;
+
+  border-radius: var(--radius-md);
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+
+  color: var(--color-text-inverse);
+  background-color: var(--color-brand-primary);
+}
+
+.service-card__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.service-card__text {
+  color: var(--color-text-secondary);
+}
+
+.service-card__link {
+  width: fit-content;
+
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand-primary);
+  text-decoration: none;
+}
+
+.service-card__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 64em) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* =========================================================
+   PORTFOLIO GRID COMPONENT
+   BEM:
+   .portfolio-grid
+   .portfolio-card
+   .portfolio-card__body
+   .portfolio-card__title
+   .portfolio-card__text
+
+   Why:
+   - Shows real projects and case studies
+   - Separates portfolio cards from generic cards
+   - Gives each project space for stack, value, and action
+========================================================= */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.portfolio-card {
+  display: grid;
+
+  overflow: hidden;
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: var(--shadow-md);
+}
+
+.portfolio-card__body {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+
+  padding: var(--space-6);
+}
+
+.portfolio-card__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.portfolio-card__text {
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 64em) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* =========================================================
+   CONTENT BLOCK COMPONENT
+   BEM:
+   .content-block
+   .content-block__content
+   .content-block__eyebrow
+   .content-block__title
+   .content-block__text
+   .content-block__actions
+   .content-block__panel
+   .content-block__panel-label
+   .content-block__panel-line
+
+   Why:
+   - Works for About, Services, Portfolio, and case study pages
+   - Gives a reusable text + visual layout
+   - Keeps page sections consistent without duplicating custom styles
+========================================================= */
+
+.content-block {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(28rem, 0.8fr);
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.content-block__content {
+  max-width: 68rem;
+}
+
+.content-block__eyebrow {
+  margin-bottom: var(--space-3);
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--color-brand-primary);
+}
+
+.content-block__title {
+  margin-bottom: var(--space-4);
+
+  font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+
+  color: var(--color-text-primary);
+}
+
+.content-block__text {
+  margin-bottom: var(--space-8);
+
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+.content-block__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.content-block__panel {
+  display: grid;
+  gap: var(--space-4);
+
+  padding: var(--space-8);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-lg);
+}
+
+.content-block__panel-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  color: var(--color-brand-primary);
+}
+
+.content-block__panel-line {
+  display: block;
+
+  height: 1.2rem;
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-border-subtle);
+}
+
+.content-block__panel-line--short {
+  width: 60%;
+}
+
+@media (max-width: 48em) {
+  .content-block {
+    grid-template-columns: 1fr;
+  }
+
+  .content-block__actions .button {
+    width: 100%;
+  }
+}
+
+
+
+/* =========================================================
+   CONTENT BLOCK IMAGE VARIANT
+   BEM:
+   .content-block--image
+   .content-block__media
+   .content-block__picture
+   .content-block__image
+   .content-block__caption
+
+   Why:
+   - Extends the normal content block
+   - Adds professional responsive image structure
+   - Keeps image sections reusable across service and portfolio pages
+========================================================= */
+
+.content-block--image {
+  align-items: start;
+}
+
+.content-block__media {
+  overflow: hidden;
+
+  margin: 0;
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-md);
+}
+
+.content-block__picture {
+  display: block;
+  background-color: var(--color-surface-muted);
+}
+
+.content-block__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.content-block__caption {
+  padding: var(--space-4) var(--space-5);
+
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+
+
+/* =========================================================
+   ARTICLE LIST COMPONENT
+   BEM:
+   .article-list
+   .article-card
+   .article-card__meta
+   .article-card__title
+   .article-card__link
+   .article-card__text
+
+   Why:
+   - Useful for blogs, tutorials, learning pages, and guides
+   - Supports search-friendly educational content
+   - Keeps article previews clean and reusable
+========================================================= */
+
+.article-list {
+  display: grid;
+  gap: var(--space-4);
+
+  max-width: 86rem;
+  margin-inline: auto;
+}
+
+.article-card {
+  padding: var(--space-6);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.article-card__meta {
+  margin-bottom: var(--space-2);
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand-primary);
+}
+
+.article-card__title {
+  margin-bottom: var(--space-3);
+
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+.article-card__link {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.article-card__link:hover {
+  color: var(--color-brand-primary);
+}
+
+.article-card__text {
+  color: var(--color-text-secondary);
+}
+
+
+
+/* =========================================================
+   AUTHOR BOX COMPONENT
+   BEM:
+   .author-box
+   .author-box__avatar
+   .author-box__content
+   .author-box__eyebrow
+   .author-box__name
+   .author-box__text
+   .author-box__link
+
+   Why:
+   - Adds trust to articles and guides
+   - Shows expertise behind the content
+   - Useful for blog posts, tutorials, and case studies
+========================================================= */
+
+.author-box {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-5);
+
+  max-width: 86rem;
+  margin-inline: auto;
+  padding: var(--space-6);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.author-box__avatar {
+  display: grid;
+  place-items: center;
+
+  width: 7.2rem;
+  height: 7.2rem;
+
+  border-radius: 50%;
+
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+
+  color: var(--color-text-inverse);
+  background-color: var(--color-brand-primary);
+}
+
+.author-box__content {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.author-box__eyebrow {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  color: var(--color-brand-primary);
+}
+
+.author-box__name {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.author-box__text {
+  color: var(--color-text-secondary);
+}
+
+.author-box__link {
+  width: fit-content;
+
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand-primary);
+  text-decoration: none;
+}
+
+.author-box__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 40em) {
+  .author-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   TABLE COMPONENT
+   BEM:
+   .table-wrapper
+   .data-table
+   .data-table__caption
+   .data-table__head
+   .data-table__body
+   .data-table__row
+   .data-table__heading
+   .data-table__cell
+   .data-table__cell--label
+
+   Why:
+   - Tables are for real tabular data, not layout
+   - Horizontal scroll protects small screens
+   - Caption and scope attributes improve accessibility
+========================================================= */
+
+.table-wrapper {
+  overflow-x: auto;
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.data-table {
+  width: 100%;
+  min-width: 68rem;
+
+  border-collapse: collapse;
+}
+
+.data-table__caption {
+  padding: var(--space-4) var(--space-6);
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  text-align: left;
+  color: var(--color-text-secondary);
+}
+
+.data-table__heading,
+.data-table__cell {
+  padding: var(--space-4) var(--space-6);
+
+  border-top: 0.1rem solid var(--color-border-subtle);
+
+  text-align: left;
+  vertical-align: top;
+}
+
+.data-table__heading {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-muted);
+}
+
+.data-table__cell {
+  color: var(--color-text-secondary);
+}
+
+.data-table__cell--label {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+/* =========================================================
+   PAGINATION COMPONENT
+   BEM:
+   .pagination
+   .pagination__list
+   .pagination__item
+   .pagination__link
+   .pagination__link--previous
+   .pagination__link--next
+   .pagination__link--active
+
+   Why:
+   - Helps users move through grouped content
+   - Useful for blogs, portfolios, archives, and listings
+   - aria-current="page" tells assistive technology which page is active
+========================================================= */
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+
+  list-style: none;
+}
+
+.pagination__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 4.4rem;
+  min-height: 4.4rem;
+  padding: var(--space-2) var(--space-3);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  background-color: var(--color-surface-card);
+
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.pagination__link:hover,
+.pagination__link--active {
+  color: var(--color-text-inverse);
+  border-color: var(--color-brand-primary);
+  background-color: var(--color-brand-primary);
+}
+
+/* =========================================================
+   SEARCH BOX COMPONENT
+   BEM:
+   .search-box
+   .search-box__label
+   .search-box__control
+   .search-box__input
+   .search-box__button
+
+   Why:
+   - Gives users a clear way to find content
+   - Works for blogs, portfolios, resources, and listings
+   - role="search" gives the form proper semantic meaning
+========================================================= */
+
+.search-box {
+  display: grid;
+  gap: var(--space-2);
+
+  max-width: 72rem;
+  margin-inline: auto;
+}
+
+.search-box__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.search-box__control {
+  display: flex;
+  gap: var(--space-3);
+
+  padding: var(--space-2);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.search-box__input {
+  flex: 1;
+  min-width: 0;
+  padding-inline: var(--space-4);
+
+  border: 0;
+  outline: 0;
+
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background-color: transparent;
+}
+
+.search-box__input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.search-box__button {
+  flex-shrink: 0;
+}
+
+@media (max-width: 40em) {
+  .search-box__control {
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+  }
+
+  .search-box__button {
+    width: 100%;
+  }
+}
+
+
+
+
+/* =========================================================
+   FILTER BAR COMPONENT
+   BEM:
+   .filter-bar
+   .filter-bar__link
+   .filter-bar__link--active
+
+   Why:
+   - Lets users browse content by category
+   - Useful for portfolio pages, blogs, resources, and service pages
+   - Uses links for static HTML pages; buttons can be used later with JavaScript filtering
+========================================================= */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.filter-bar__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 4.4rem;
+  padding: var(--space-2) var(--space-5);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  background-color: var(--color-surface-card);
+
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.filter-bar__link:hover,
+.filter-bar__link--active {
+  color: var(--color-text-inverse);
+  border-color: var(--color-brand-primary);
+  background-color: var(--color-brand-primary);
+}
+
+
+
+/* =========================================================
+   SKIP LINK COMPONENT
+   BEM:
+   .skip-link
+
+   Why:
+   - Helps keyboard users skip repeated navigation
+   - Improves accessibility on every page
+   - Usually hidden until focused
+========================================================= */
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: var(--space-4);
+  z-index: 100;
+
+  transform: translateY(-150%);
+
+  padding: var(--space-3) var(--space-4);
+
+  border-radius: var(--radius-md);
+
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+  text-decoration: none;
+
+  background-color: var(--color-brand-primary);
+
+  transition: transform var(--transition-base);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+
+
+/* =========================================================
+   BACK TO TOP COMPONENT
+   BEM:
+   .back-to-top
+
+   Why:
+   - Helps users navigate long pages
+   - Useful for tutorials, blogs, learning pages, and portfolios
+   - position: fixed keeps the button visible during scrolling
+========================================================= */
+
+.back-to-top {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 20;
+
+  display: grid;
+  place-items: center;
+
+  width: 5.2rem;
+  height: 5.2rem;
+
+  border-radius: 50%;
+
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+
+  color: var(--color-text-inverse);
+  text-decoration: none;
+
+  background-color: var(--color-brand-primary);
+  box-shadow: var(--shadow-md);
+
+  transition:
+    transform var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.back-to-top:hover {
+  transform: translateY(-0.2rem);
+  background-color: var(--color-brand-primary-hover);
+}
+
+
+
+/* =========================================================
+   ERROR STATE COMPONENT
+   BEM:
+   .error-state
+   .error-state__code
+   .error-state__title
+   .error-state__text
+   .error-state__actions
+
+   Why:
+   - Gives users a useful path when something goes wrong
+   - Works for 404 pages, empty searches, and unavailable content
+   - Keeps error pages friendly instead of dead ends
+========================================================= */
+
+.error-state {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+
+  max-width: 68rem;
+  margin-inline: auto;
+
+  text-align: center;
+}
+
+.error-state__code {
+  font-size: clamp(6.4rem, 14vw, 12rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+
+  color: var(--color-brand-primary);
+}
+
+.error-state__title {
+  font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.error-state__text {
+  max-width: 52rem;
+
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+.error-state__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 40em) {
+  .error-state__actions {
+    width: 100%;
+  }
+
+  .error-state__actions .button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   CONTACT CARD COMPONENT
+   BEM:
+   .contact-card
+   .contact-card__content
+   .contact-card__eyebrow
+   .contact-card__title
+   .contact-card__text
+   .contact-card__list
+   .contact-card__item
+   .contact-card__label
+   .contact-card__link
+   .contact-card__value
+
+   Why:
+   - Groups business contact information clearly
+   - Works on contact pages, footers, and enquiry sections
+   - Makes important communication details easy to scan
+========================================================= */
+
+.contact-card {
+  display: grid;
+  gap: var(--space-6);
+
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: var(--space-8);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-card__content {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.contact-card__eyebrow {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--color-brand-primary);
+}
+
+.contact-card__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+
+  color: var(--color-text-primary);
+}
+
+.contact-card__text {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+.contact-card__list {
+  display: grid;
+  gap: var(--space-4);
+
+  list-style: none;
+}
+
+.contact-card__item {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.contact-card__label {
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+}
+
+.contact-card__link,
+.contact-card__value {
+  color: var(--color-text-secondary);
+}
+
+.contact-card__link {
+  width: fit-content;
+  text-decoration: none;
+}
+
+.contact-card__link:hover {
+  color: var(--color-brand-primary);
+  text-decoration: underline;
+}
+
+@media (max-width: 40em) {
+  .contact-card {
+    padding: var(--space-6);
+  }
+}
+
+
+/* =========================================================
+   SOCIAL LINKS COMPONENT
+   BEM:
+   .social-links
+   .social-links__link
+
+   Why:
+   - Groups external profile links clearly
+   - Works in footers, contact pages, and business profile sections
+   - Keeps social links reusable instead of styling each one separately
+========================================================= */
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.social-links__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 4.4rem;
+  padding: var(--space-2) var(--space-5);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base),
+    background-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.social-links__link:hover {
+  transform: translateY(-0.2rem);
+
+  color: var(--color-text-inverse);
+  border-color: var(--color-brand-primary);
+  background-color: var(--color-brand-primary);
+}
+
+
+
+/* =========================================================
+   NEWSLETTER COMPONENT
+   BEM:
+   .newsletter
+   .newsletter__content
+   .newsletter__eyebrow
+   .newsletter__title
+   .newsletter__text
+   .newsletter__form-group
+   .newsletter__label
+   .newsletter__control
+   .newsletter__input
+   .newsletter__button
+   .newsletter__hint
+
+   Why:
+   - Useful for email signup sections
+   - Works for blogs, learning pages, and business updates
+   - Keeps form structure accessible with a real label
+========================================================= */
+
+.newsletter {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(28rem, 0.9fr);
+  align-items: center;
+  gap: var(--space-8);
+
+  padding: var(--space-8);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background:
+    radial-gradient(circle at top right, var(--color-brand-primary-soft), transparent 28rem),
+    var(--color-surface-card);
+
+  box-shadow: var(--shadow-md);
+}
+
+.newsletter__content {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.newsletter__eyebrow {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--color-brand-primary);
+}
+
+.newsletter__title {
+  font-size: clamp(var(--text-xl), 4vw, var(--text-2xl));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+
+  color: var(--color-text-primary);
+}
+
+.newsletter__text {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+.newsletter__form-group {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.newsletter__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+
+  color: var(--color-text-primary);
+}
+
+.newsletter__control {
+  display: flex;
+  gap: var(--space-3);
+
+  padding: var(--space-2);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-surface-page);
+}
+
+.newsletter__input {
+  flex: 1;
+  min-width: 0;
+  padding-inline: var(--space-4);
+
+  border: 0;
+  outline: 0;
+
+  color: var(--color-text-primary);
+  background-color: transparent;
+}
+
+.newsletter__input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.newsletter__button {
+  flex-shrink: 0;
+}
+
+.newsletter__hint {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 48em) {
+  .newsletter {
+    grid-template-columns: 1fr;
+    padding: var(--space-6);
+  }
+
+  .newsletter__control {
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+  }
+
+  .newsletter__button {
+    width: 100%;
+  }
+}
+
+
+
+/* =========================================================
+   SECTION DIVIDER COMPONENT
+   BEM:
+   .section-divider
+
+   Why:
+   - Separates long pages without adding unnecessary content
+   - Useful between services, testimonials, pricing, and FAQ sections
+   - aria-hidden="true" keeps it decorative for assistive technology
+========================================================= */
+
+.section-divider {
+  width: min(100% - var(--container-padding) * 2, var(--container-max-width));
+  height: 0.1rem;
+  margin-inline: auto;
+
+  background-color: var(--color-border-subtle);
+}
+
+
+
+/* =========================================================
+   QUOTE BLOCK COMPONENT
+   BEM:
+   .quote-block
+   .quote-block__quote
+   .quote-block__caption
+   .quote-block__author
+   .quote-block__role
+
+   Why:
+   - Highlights important text
+   - Works for testimonials, articles, and case studies
+   - Uses figure, blockquote, and figcaption for semantic meaning
+========================================================= */
+
+.quote-block {
+  max-width: 86rem;
+  margin-inline: auto;
+  padding: var(--space-8);
+
+  border-left: 0.4rem solid var(--color-brand-primary);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.quote-block__quote {
+  font-size: clamp(var(--text-xl), 4vw, var(--text-2xl));
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+
+  color: var(--color-text-primary);
+}
+
+.quote-block__caption {
+  display: grid;
+  gap: var(--space-1);
+
+  margin-top: var(--space-5);
+}
+
+.quote-block__author {
+  color: var(--color-text-primary);
+}
+
+.quote-block__role {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 40em) {
+  .quote-block {
+    padding: var(--space-6);
+  }
+}
+
+
+/* =========================================================
+   HERO IMAGE VARIANT
+   BEM:
+   .hero--image
+   .hero__media
+   .hero__picture
+   .hero__image
+
+   Why:
+   - Extends the main homepage hero
+   - Adds real responsive image architecture
+   - Keeps the normal .hero component reusable
+========================================================= */
+
+.hero--image {
+  background:
+    radial-gradient(circle at top right, var(--color-brand-primary-soft), transparent 32rem),
+    var(--color-surface-page);
+}
+
+.hero__media {
+  overflow: hidden;
+
+  margin: 0;
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-muted);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero__picture {
+  display: block;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
+/* =========================================================
+   EMPTY STATE COMPONENT
+   BEM:
+   .empty-state
+   .empty-state__icon
+   .empty-state__title
+   .empty-state__text
+   .empty-state__actions
+
+   Why:
+   - Used when no data exists
+   - Different from an error state
+   - Helps users continue instead of reaching a dead end
+========================================================= */
+
+.empty-state {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+
+  max-width: 64rem;
+  margin-inline: auto;
+
+  text-align: center;
+}
+
+.empty-state__icon {
+  display: grid;
+  place-items: center;
+
+  width: 8rem;
+  height: 8rem;
+
+  border-radius: 50%;
+
+  font-size: 3.2rem;
+  font-weight: var(--font-weight-bold);
+
+  color: var(--color-brand-primary);
+  background-color: var(--color-brand-primary-soft);
+}
+
+.empty-state__title {
+  font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+
+  color: var(--color-text-primary);
+}
+
+.empty-state__text {
+  max-width: 52rem;
+
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+}
+
+.empty-state__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 40em) {
+  .empty-state__actions {
+    width: 100%;
+  }
+
+  .empty-state__actions .button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   LOADING STATE COMPONENT
+   BEM:
+   .loading-state
+   .loading-state__spinner
+   .loading-state__text
+
+   Why:
+   - Shows users that content is loading
+   - Useful for future JavaScript, PHP, search, and dashboard features
+   - role="status" and aria-live="polite" make the state accessible
+========================================================= */
+
+.loading-state {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+  
+  padding: var(--space-8);
+  
+  text-align: center;
+}
+
+.loading-state__spinner {
+  width: 5.6rem;
+  height: 5.6rem;
+  
+  border: 0.4rem solid var(--color-border-subtle);
+  border-top-color: var(--color-brand-primary);
+  border-radius: 50%;
+  
+  animation: loading-state-spin 800ms linear infinite;
+}
+
+.loading-state__text {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+@keyframes loading-state-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+/* =========================================================
+   PROGRESS COMPONENT
+   BEM:
+   .progress-card
+   .progress-card__header
+   .progress-card__title
+   .progress-card__value
+   .progress-card__track
+   .progress-card__bar
+   .progress-card__text
+
+   Why:
+   - Shows completion clearly
+   - Useful for dashboards, setup flows, project progress, and skill sections
+   - Uses role="progressbar" so assistive technology understands the value
+========================================================= */
+
+.progress-card {
+  display: grid;
+  gap: var(--space-4);
+
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: var(--space-6);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.progress-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.progress-card__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.progress-card__value {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand-primary);
+}
+
+.progress-card__track {
+  overflow: hidden;
+
+  height: 1.2rem;
+
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-border-subtle);
+}
+
+.progress-card__bar {
+  display: block;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background-color: var(--color-brand-primary);
+}
+
+.progress-card__text {
+  color: var(--color-text-secondary);
+}
+
+
+
+/* =========================================================
+   BADGE COMPONENT
+   BEM:
+   .badge
+   .badge--primary
+   .badge--success
+   .badge--warning
+   .badge--danger
+
+   Why:
+   - Shows compact status or category information
+   - Useful for cards, pricing, dashboards, filters, and labels
+   - Keeps small labels visually consistent across the website
+========================================================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  min-height: 2.8rem;
+  padding: var(--space-1) var(--space-3);
+
+  border: 0.1rem solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface-card);
+}
+
+.badge--primary {
+  color: var(--color-brand-primary);
+  border-color: var(--color-brand-primary-soft);
+  background-color: var(--color-brand-primary-soft);
+}
+
+.badge--success {
+  color: var(--color-success);
+  border-color: var(--color-success-soft);
+  background-color: var(--color-success-soft);
+}
+
+.badge--warning {
+  color: #92400e;
+  border-color: var(--color-warning-soft);
+  background-color: var(--color-warning-soft);
+}
+
+.badge--danger {
+  color: var(--color-danger);
+  border-color: var(--color-danger-soft);
+  background-color: var(--color-danger-soft);
+}

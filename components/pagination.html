@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pagination Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable pagination component for blog posts, portfolio listings, learning resources, and search-engine-friendly content archives.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main id="main-content">
+    <a class="skip-link" href="#main-content">
+  Skip to main content
+</a>
+    <section class="section" aria-labelledby="pagination-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Navigation Pattern</p>
+
+          <h1 class="section-heading__title" id="pagination-title">
+            Pagination component
+          </h1>
+
+          <p class="section-heading__text">
+            A reusable navigation pattern for moving through articles, portfolio items, search results, or archive pages.
+          </p>
+        </header>
+
+        <nav class="pagination" aria-label="Pagination">
+          <a class="pagination__link pagination__link--previous" href="#" title="Go to previous page">
+            Previous
+          </a>
+
+          <ol class="pagination__list">
+            <li class="pagination__item">
+              <a class="pagination__link" href="#" title="Go to page 1">
+                1
+              </a>
+            </li>
+
+            <li class="pagination__item">
+              <a class="pagination__link pagination__link--active" href="#" aria-current="page" title="Current page, page 2">
+                2
+              </a>
+            </li>
+
+            <li class="pagination__item">
+              <a class="pagination__link" href="#" title="Go to page 3">
+                3
+              </a>
+            </li>
+          </ol>
+
+          <a class="pagination__link pagination__link--next" href="#" title="Go to next page">
+            Next
+          </a>
+        </nav>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

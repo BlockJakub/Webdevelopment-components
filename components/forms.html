@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Form Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable accessible form component for professional business websites, contact pages, and lead generation forms.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section section--muted" aria-labelledby="form-title">
+      <div class="container">
+        <div class="form-layout">
+          <header class="section-heading">
+            <p class="section-heading__eyebrow">Component Library</p>
+
+            <h1 class="section-heading__title" id="form-title">
+              Contact form component
+            </h1>
+
+            <p class="section-heading__text">
+              A reusable accessible form pattern with labels, helper text, required fields, and professional spacing.
+            </p>
+          </header>
+
+          <form class="form" action="#" method="post">
+            <div class="form__group">
+              <label class="form__label" for="name">
+                Full name
+              </label>
+
+              <input
+                class="form__control"
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                placeholder="Your full name"
+                required
+              >
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="email">
+                Email address
+              </label>
+
+              <input
+                class="form__control"
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              >
+
+              <p class="form__hint">
+                We will only use your email to reply to your enquiry.
+              </p>
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="message">
+                Project message
+              </label>
+
+              <textarea
+                class="form__control form__control--textarea"
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Tell me what kind of website or component you need."
+                required
+              ></textarea>
+            </div>
+
+            <button class="button button--primary" type="submit">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

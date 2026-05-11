@@ -1,0 +1,126 @@
+/* =========================================================
+   variables.css
+   Global design tokens for the component library
+========================================================= */
+
+:root {
+  /* ================================
+     Brand colours
+  ================================ */
+  
+  --color-brand-primary: #2563eb;
+  --color-brand-primary-hover: #1d4ed8;
+  --color-brand-primary-soft: #dbeafe;
+  --color-brand-primary-soft-hover: #bfdbfe;
+  --color-brand-accent: #f97316;
+  
+  /* ================================
+     Interface state colours
+  ================================ */
+  
+  --color-success: #16a34a;
+  --color-success-soft: #dcfce7;
+  
+  --color-info: #2563eb;
+  --color-info-soft: #dbeafe;
+  
+  --color-warning: #f59e0b;
+  --color-warning-soft: #fef3c7;
+  
+  --color-danger: #dc2626;
+  --color-danger-soft: #fee2e2;
+  
+  /* ================================
+     Text colours
+  ================================ */
+  
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-inverse: #ffffff;
+  
+  /* ================================
+     Surface colours
+  ================================ */
+  
+  --color-surface-page: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-surface-card: #ffffff;
+  --color-surface-dark: #0f172a;
+  
+  /* ================================
+     Border colours
+  ================================ */
+  
+  --color-border-subtle: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+  
+  /* ================================
+     Typography
+  ================================ */
+  
+  --font-family-base: Arial, Helvetica, sans-serif;
+  --font-family-heading: Arial, Helvetica, sans-serif;
+  
+  --text-xs: 1.2rem;
+  --text-sm: 1.4rem;
+  --text-base: 1.6rem;
+  --text-lg: 1.8rem;
+  --text-xl: 2.4rem;
+  --text-2xl: 3.2rem;
+  --text-3xl: 4.8rem;
+  
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.2;
+  --line-height-base: 1.6;
+  
+  /* ================================
+     Spacing
+  ================================ */
+  
+  --space-1: 0.4rem;
+  --space-2: 0.8rem;
+  --space-3: 1.2rem;
+  --space-4: 1.6rem;
+  --space-5: 2rem;
+  --space-6: 2.4rem;
+  --space-8: 3.2rem;
+  --space-10: 4rem;
+  --space-12: 4.8rem;
+  --space-16: 6.4rem;
+  --space-20: 8rem;
+  
+  /* ================================
+     Layout
+  ================================ */
+  
+  --container-max-width: 120rem;
+  --container-padding: 2rem;
+  
+  /* ================================
+     Border radius
+  ================================ */
+  
+  --radius-sm: 0.4rem;
+  --radius-md: 0.8rem;
+  --radius-lg: 1.6rem;
+  --radius-pill: 999rem;
+  
+  /* ================================
+     Shadows
+  ================================ */
+  
+  --shadow-sm: 0 0.4rem 1.2rem rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 1rem 2.5rem rgba(15, 23, 42, 0.12);
+  --shadow-lg: 0 2rem 4rem rgba(15, 23, 42, 0.16);
+  
+  /* ================================
+     Motion
+  ================================ */
+  
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}

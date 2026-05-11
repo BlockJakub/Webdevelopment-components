@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Content Block Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable content block component for professional website sections with text, actions, and supporting visual panels.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section section--muted" aria-labelledby="content-block-title">
+      <div class="container">
+        <div class="content-block">
+          <div class="content-block__content">
+            <p class="content-block__eyebrow">Professional Structure</p>
+
+            <h1 class="content-block__title" id="content-block-title">
+              Content block component
+            </h1>
+
+            <p class="content-block__text">
+              A reusable section for explaining services, project value, business benefits, or important page content.
+            </p>
+
+            <div class="content-block__actions">
+              <a class="button button--primary" href="#" title="Learn more about this content section">
+                Learn More
+              </a>
+
+              <a class="button button--outline" href="#" title="View related website components">
+                View Components
+              </a>
+            </div>
+          </div>
+
+          <div class="content-block__panel" aria-hidden="true">
+            <span class="content-block__panel-label">Reusable Layout</span>
+            <span class="content-block__panel-line"></span>
+            <span class="content-block__panel-line content-block__panel-line--short"></span>
+            <span class="content-block__panel-line"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Responsive Media Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable responsive image component using picture, source, srcset, sizes, lazy loading, width, height, and search-engine-friendly alt text.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <main>
+    <section class="section" aria-labelledby="media-title">
+      <div class="container section__inner">
+
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Component Library</p>
+
+          <h1 class="section-heading__title" id="media-title">
+            Responsive media component
+          </h1>
+
+          <p class="section-heading__text">
+            A professional image pattern for fast loading, mobile optimisation, layout stability, and better search visibility.
+          </p>
+        </header>
+
+        <figure class="media-card">
+          <picture class="media-card__picture">
+            <source
+              media="(min-width: 80em)"
+              srcset="
+                ../assets/images/demo/desktop/web-development-workspace-960.webp 960w,
+                ../assets/images/demo/desktop/web-development-workspace-1280.webp 1280w
+              "
+              sizes="60vw"
+            >
+
+            <source
+              media="(min-width: 48em)"
+              srcset="
+                ../assets/images/demo/tablet/web-development-workspace-640.webp 640w,
+                ../assets/images/demo/tablet/web-development-workspace-960.webp 960w
+              "
+              sizes="80vw"
+            >
+
+            <img
+              class="media-card__image"
+              src="../assets/images/demo/mobile/web-development-workspace-640.webp"
+              srcset="
+                ../assets/images/demo/mobile/web-development-workspace-375.webp 375w,
+                ../assets/images/demo/mobile/web-development-workspace-480.webp 480w,
+                ../assets/images/demo/mobile/web-development-workspace-640.webp 640w
+              "
+              sizes="100vw"
+              alt="Professional web development workspace showing a laptop with code and design tools"
+              title="Professional responsive web development image component"
+              width="640"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            >
+          </picture>
+
+          <figcaption class="media-card__caption">
+            Responsive image component using WebP, multiple breakpoints, lazy loading, and semantic image description.
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+  </main>
+</body>
+</html>

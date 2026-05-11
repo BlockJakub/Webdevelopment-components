@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Skip Link Component | Reusable HTML and CSS System</title>
+  <meta name="description" content="A reusable skip link component for accessible websites, keyboard navigation, and professional front-end structure.">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-header__nav" aria-label="Primary navigation">
+        <a class="site-header__logo" href="../index.html" title="Go to homepage">
+          Jacuba Components
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section" aria-labelledby="skip-link-title">
+      <div class="container section__inner">
+        <header class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Accessibility</p>
+
+          <h1 class="section-heading__title" id="skip-link-title">
+            Skip link component
+          </h1>
+
+          <p class="section-heading__text">
+            A keyboard-accessible link that lets users jump directly to the main page content.
+          </p>
+        </header>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
